@@ -101,11 +101,6 @@ namespace Org.Apache.REEF.Common.Poison
         public PoisonException(string s) : base(s)
         {
         }
-
-        public PoisonException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
     }
 
     [Private]

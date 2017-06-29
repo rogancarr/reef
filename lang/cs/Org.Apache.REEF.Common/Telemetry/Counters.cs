@@ -106,8 +106,7 @@ namespace Org.Apache.REEF.Common.Telemetry
         /// <param name="number">number to increase</param>
         public void Increment(string name, int number)
         {
-            ICounter counter;
-            if (TryGetValue(name, out counter))
+            if (TryGetValue(name, out ICounter counter))
             {
                 lock (_counterLock)
                 {
@@ -117,7 +116,7 @@ namespace Org.Apache.REEF.Common.Telemetry
             else
             {
                 Logger.Log(Level.Error, "The counter [{0}]  has not registered.", name);
-                throw new ApplicationException("Counter has not registered:" + name);
+                throw new InvalidOperationException("Counter has not registered:" + name);
             }
         }
 

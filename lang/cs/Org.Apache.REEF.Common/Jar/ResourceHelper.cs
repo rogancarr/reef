@@ -62,12 +62,12 @@ namespace Org.Apache.REEF.Common.Jar
             var names = assembly.GetManifestResourceNames();
             if (null == names[0])
             {
-                throw new ApplicationException("Could not retrieve Assembly Manifest Resource names");
+                throw new InvalidOperationException("Could not retrieve Assembly Manifest Resource names");
             }
             var manifestResources = assembly.GetManifestResourceStream(names[0]);
             if (null == manifestResources)
             {
-                throw new ApplicationException("Could not retrieve Assembly Manifest Resource stream");
+                throw new InvalidOperationException("Could not retrieve Assembly Manifest Resource stream");
             }
 
             _resourceSet = new ResourceSet(manifestResources);
@@ -83,7 +83,7 @@ namespace Org.Apache.REEF.Common.Jar
             var resource = _resourceSet.GetObject(resourceName);
             if (null == resource)
             {
-                throw new ApplicationException(string.Format(CouldNotRetrieveResource, resourceName));
+                throw new InvalidOperationException(string.Format(CouldNotRetrieveResource, resourceName));
             }
             return (T)resource;
         }

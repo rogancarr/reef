@@ -47,11 +47,6 @@ namespace Org.Apache.REEF.Common.Exceptions
         {
         }
 
-        private NonSerializableEvaluatorException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
-
         private static string GetNonSerializableExceptionMessage(Exception e)
         {
             return string.Format("Unable to serialize the original Evaluator Exception. Original Exception.ToString(): {0}", e);

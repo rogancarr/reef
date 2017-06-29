@@ -369,7 +369,7 @@ namespace Org.Apache.REEF.Common.Runtime.Evaluator.Task
         {
             if (_result.IsPresent() && _lastException.IsPresent())
             {
-                throw new ApplicationException(
+                throw new InvalidOperationException(
                     string.Format("Both Exception and Result are present. One of the Threads have already sent a result back." +
                     "Result returned [{0}]. Exception was [{1}]. Failing the Evaluator.", _result.Value, _lastException.Value));
             }

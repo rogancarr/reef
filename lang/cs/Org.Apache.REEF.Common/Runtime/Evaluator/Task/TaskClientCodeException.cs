@@ -73,16 +73,6 @@ namespace Org.Apache.REEF.Common.Runtime.Evaluator.Task
             _contextId = contextId;
         }
 
-        /// <summary>
-        /// Constructor used for serialization.
-        /// </summary>
-        private TaskClientCodeException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            _taskId = info.GetString(TaskIdStr);
-            _contextId = info.GetString(ContextIdStr);
-        }
-
         public string TaskId
         {
             get { return _taskId; }

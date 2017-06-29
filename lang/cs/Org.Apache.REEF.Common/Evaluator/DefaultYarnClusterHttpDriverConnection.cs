@@ -40,7 +40,7 @@ namespace Org.Apache.REEF.Common.Evaluator
         {
             if (string.IsNullOrWhiteSpace(_applicationId))
             {
-                throw new ApplicationException("Could not fetch the application ID from YARN's container environment variables.");
+                throw new InvalidOperationException("Could not fetch the application ID from YARN's container environment variables.");
             }
 
             var yarnRMWebAppEndpoints = _yarnConfiguration.GetYarnRMWebappEndpoints();
@@ -64,7 +64,7 @@ namespace Org.Apache.REEF.Common.Evaluator
                 }
             }
 
-            throw new ApplicationException("Unable to get Driver Information.");
+            throw new InvalidOperationException("Unable to get Driver Information.");
         }
     }
 }

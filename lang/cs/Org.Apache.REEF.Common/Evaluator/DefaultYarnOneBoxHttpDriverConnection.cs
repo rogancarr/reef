@@ -35,7 +35,7 @@ namespace Org.Apache.REEF.Common.Evaluator
         {
             if (string.IsNullOrWhiteSpace(_applicationId))
             {
-                throw new ApplicationException("Could not fetch the application ID from YARN's container environment variables.");
+                throw new InvalidOperationException("Could not fetch the application ID from YARN's container environment variables.");
             }
 
             // e.g., http://yingdac1:8088/proxy/application_1407519727821_0012/reef/v1/driver
