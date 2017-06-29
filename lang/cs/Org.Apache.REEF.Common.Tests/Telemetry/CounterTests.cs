@@ -72,7 +72,7 @@ namespace Org.Apache.REEF.Common.Tests.Telemetry
         {
             var counters = CreateCounters();
             Action increment = () => counters.Increment("counter1", 2);
-            Assert.Throws<ApplicationException>(increment);
+            Assert.Throws<InvalidOperationException>(increment);
         }
 
         private static void ValidateCounter(ICounters counters, string name, int expectedValue)
